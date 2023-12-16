@@ -47,10 +47,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Adds a static node\n\n> **Caution**\n>\n> If connections are timing out, ensure the node ID in the enode URL is correct.\n\n#### Parameters\n\n`string` : Enode URL of peer to add\n\n#### Returns\n\n`result` : `boolean` - `true` if peer added or `false` if peer already a static node."
           },
@@ -70,10 +68,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -99,10 +95,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Changes the log level without restarting Besu. You can change the log level for all logs, or you\ncan change the log level for specific packages or classes.\n\nYou can specify only one log level per RPC call.\n\n#### Parameters\n\n`level` - [Log level](https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/#logging)\n\n`log_filter`: `Array` - Packages or classes to change the log level for. Optional.\n\n#### Returns\n\n`result` : `Success` if the log level has changed, otherwise `error`."
           },
@@ -122,10 +116,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -151,10 +143,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Generates cached log bloom indexes for blocks. APIs such as [`eth_getLogs`](#eth_getlogs) and\n[`eth_getFilterLogs`](#eth_getfilterlogs) use the cache for improved performance.\n\n> **note**\n>\n> Each index file contains 100000 blocks. The last fragment of blocks less than 100000 are not indexed.\n\n> **tip**\n>\n> Manually executing `admin_generateLogBloomCache` is not required unless the [`--auto-log-bloom-caching-enabled`](https://besu.hyperledger.org/en/stable/Reference/CLI/CLI-Syntax/#auto-log-bloom-caching-enabled) command line option was set to false.\n\n#### Parameters\n\n`integer` - Block to start generating indexes.\n\n`integer` - Block to stop generating indexes.\n\n#### Returns\n\n`result` : *object* - Log bloom index details:\n\n* `quantity` : `startBlock` - Starting block for the last requested cache generation.\n* `quantity` : `endBlock` - Ending block for the last requested cache generation.\n* `quantity` : `currentBlock` - The most recent block added to the cache.\n* `boolean` : `indexing` - `true` if indexing is in progress.\n* `boolean` : `true` indicates acceptance of the request from this call to generate the cache."
           },
@@ -174,10 +164,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -203,10 +191,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Repairs cached logs by fixing all segments starting with the specified block number.\n\n#### Parameters\n\n`quantity` - Decimal index of the starting block to fix. If left empty, the head block\nis used as the starting point.\n\n#### Returns\n\n`result` -  Status of the repair request. Either `Started`, or `Already running`."
           },
@@ -217,10 +203,8 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -246,10 +230,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns networking information about the node. The information includes general information about\nthe node and specific information from each running Ethereum sub-protocol (for example, `eth`).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : Node object\n\nProperties of the node object are:\n\n* `enode` - [Enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url) of the node.\n* `listenAddr` - Host and port for the node.\n* `name` - Client name.\n* `id` - [Node public key](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#node-public-key).\n* `ports` - Peer discovery and listening\n  [ports](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Managing-Peers#port-configuration).\n* `protocols` - List of objects containing information for each Ethereum sub-protocol.\n\n> **note**\n>\n> If the node is running locally, the host of the `enode` and `listenAddr` display as `[::]` in the result. When advertising externally, the external address displayed for the `enode` and `listenAddr` is defined by [`--nat-method`](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Specifying-NAT).\n"
           },
@@ -269,10 +251,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -298,10 +278,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns networking information about connected remote nodes.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *array* of *objects* - Object returned for each remote node.\n\nProperties of the remote node object are:\n\n* `version` - P2P protocol version.\n* `name` - Client name.\n* `caps` - List of Ethereum sub-protocol capabilities.\n* `network` - Local and remote addresses established at time of bonding with the peer. The remote\n  address might not match the hex value for `port`. The remote address depends on which node\n  initiated the connection.\n* `port` - Port on the remote node on which P2P discovery is listening.\n* `id` - Node public key. Excluding the `0x` prefix, the node public key is the ID in the enode\n  URL `enode://<id ex 0x>@<host>:<port>`.\n* `protocols` - [Current state of peer](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Managing-Peers#monitoring-peer-connections)\n  including `difficulty` and `head`. `head` is the hash of the highest known block for the peer."
           },
@@ -321,10 +299,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -350,10 +326,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Removes a [static node](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Static-Nodes).\n\n#### Parameters\n\n`string` : [Enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url) of peer to remove.\n\n#### Returns\n\n`result` : `boolean` - `true` if peer removed or `false` if peer not a\n[static node](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Static-Nodes))."
           },
@@ -373,10 +347,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -424,10 +396,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Discards a proposal to [add or remove a signer with the specified address].\n\n#### Parameters\n\n`data` - 20-byte address of proposed signer.\n\n#### Returns\n\n`result: boolean` - `true`"
           },
@@ -447,10 +417,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -476,10 +444,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Provides validator metrics for the specified range:\n\n* Number of blocks from each validator.\n* Block number of the last block proposed by each validator (if any proposed in the specified\n  range).\n* All validators present in the last block.\n\n#### Parameters\n\n`fromBlockNumber` - Integer representing a block number or the string tag `earliest`, as described\nin [Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`toBlockNumber` - Integer representing a block number or one of the string tags `latest` or\n`pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter)\n\nIf you specify:\n\n* No parameters, the call provides metrics for the last 100 blocks, or all blocks if there are less\n  than 100 blocks.\n* Only the first parameter, the call provides metrics for all blocks from the block specified to\n  the latest block.\n\n#### Returns\n\n`result`: _object_ - List of validator objects.\n\n> **Note**\n>\n> The proposer of the genesis block has address `0x0000000000000000000000000000000000000000`."
           },
@@ -499,10 +465,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -528,10 +492,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Lists [signers for the specified block].\n\n#### Parameters\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result: array of data` - List of 20-byte addresses of signers."
           },
@@ -551,10 +513,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -580,10 +540,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Lists signers for the specified block.\n\n#### Parameters\n\n`data` - 32-byte block hash.\n\n#### Returns\n\n`result: array of data` - List of 20-byte addresses of signers."
           },
@@ -603,10 +561,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -632,10 +588,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns\n[current proposals](https://besu.hyperledger.org/en/stable/HowTo/Configure/Consensus-Protocols/Clique#adding-and-removing-signers).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result`:_object_ - Map of account addresses to corresponding boolean values indicating the\nproposal for each account.\n\nIf the boolean value is `true`, the proposal is to add a signer. If `false`, the proposal is to\nremove a signer."
           },
@@ -655,10 +609,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -684,10 +636,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Propose to [add or remove a signer with the specified address].\n\n#### Parameters\n\n`data` - 20-byte address.\n\n`boolean` -  `true` to propose adding signer or `false` to propose removing signer.\n\n#### Returns\n\n`result: boolean` - `true`"
           },
@@ -707,10 +657,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -742,10 +690,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "[Retesteth](https://github.com/ethereum/retesteth/wiki/Retesteth-Overview) uses\n`debug_accountRange` to implement debugging.\n\nReturns the accounts for a specified block.\n\n#### Parameters\n\n`blockHashOrNumber` : `data` - Block hash or number.\n\n`txIndex` : `integer` - Transaction index from which to start.\n\n`address` : `data` - Address hash from which to start.\n\n`limit` : `integer` - Maximum number of account entries to return.\n\n#### Returns\n\n`result`:`object` - Account details:\n\n* `addressMap`:`object` - List of address hashes and account addresses.\n* `nextKey`:`data` - Hash of the next address if any addresses remain in the state, otherwise\n  zero.\n"
           },
@@ -765,10 +711,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -794,10 +738,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns metrics providing information on the internal operation of Besu.\n\nThe available metrics might change over time. The JVM metrics might vary based on the JVM\nimplementation used.\n\nThe metric types are:\n\n* Timer\n* Counter\n* Gauge.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result`:`object`"
           },
@@ -817,10 +759,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -846,10 +786,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "[Remix](https://remix.ethereum.org/) uses `debug_storageRangeAt` to implement debugging. Use the\n_Debugger_ tab in Remix instead of calling `debug_storageRangeAt` directly.\n\nReturns the contract storage for the specified range.\n\n#### Parameters\n\n`blockHash` : `data` - Block hash.\n\n`txIndex` : `integer` - Transaction index from which to start.\n\n`address` : `data` - Contract address.\n\n`startKey` : `hash` - Start key.\n\n`limit` : `integer` - Number of storage entries to return.\n\n#### Returns\n\n`result`:`object` - [Range object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#range-object).\n"
           },
@@ -869,10 +807,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -898,10 +834,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns full trace of all invoked opcodes of all transactions included in the block.\n\n#### Parameters\n\n`Block` : `data` - RLP of the block.\n\n`Object` - request options (all optional and default to `false`):\n\n* `disableStorage` : `boolean` - `true` disables storage capture.\n* `disableMemory` : `boolean` - `true` disables memory capture.\n* `disableStack` : `boolean` - `true` disables stack capture.\n\n#### Returns\n\n`result`:`object` - [Trace object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#trace-object).\n"
           },
@@ -921,10 +855,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -950,10 +882,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns full trace of all invoked opcodes of all transactions included in the block.\n\n#### Parameters\n\n`block hash` : `data` - Block hash.\n\n`Object` - request options (all optional and default to `false`):\n\n* `disableStorage` : `boolean` - `true` disables storage capture.\n* `disableMemory` : `boolean` - `true` disables memory capture.\n* `disableStack` : `boolean` - `true` disables stack capture.\n\n#### Returns\n\n`result`:`array of objects` - [Trace objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#trace-object)."
           },
@@ -973,10 +903,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1002,10 +930,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns full trace of all invoked opcodes of all transactions included in the block.\n\n#### Parameters\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`Object` - request options (all optional and default to `false`):\n\n* `disableStorage` : `boolean` - `true` disables storage capture.\n* `disableMemory` : `boolean` - `true` disables memory capture.\n* `disableStack` : `boolean` - `true` disables stack capture.\n\n#### Returns\n\n`result`:`array of objects` - [Trace objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#trace-object)."
           },
@@ -1025,10 +951,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1054,10 +978,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "[Remix](https://remix.ethereum.org/) uses `debug_traceTransaction` to implement debugging. Use the\n_Debugger_ tab in Remix instead of calling `debug_traceTransaction` directly.\n\nReruns the transaction with the same state as when the transaction executed.\n\n#### Parameters\n\n`transactionHash` : `data` - Transaction hash.\n\n`Object` - request options (all optional and default to `false`):\n\n* `disableStorage` : `boolean` - `true` disables storage capture.\n* `disableMemory` : `boolean` - `true` disables memory capture.\n* `disableStack` : `boolean` - `true` disables stack capture.\n\n#### Returns\n\n`result`:`object` - [Trace object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#trace-object).\n"
           },
@@ -1077,10 +999,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1112,10 +1032,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns a list of account addresses a client owns.\n\n> **note**\n> \n> This method returns an empty object because Besu [doesn't support key management](https://besu.hyperledger.org/en/stable/HowTo/Send-Transactions/Account-Management) inside the client.\n> \n> To provide access to your key store and and then sign transactions, use [EthSigner](http://docs.ethsigner.consensys.net/en/latest/) with Besu.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`Array of data` : List of 20-byte account addresses owned by the client.\n"
           },
@@ -1135,10 +1053,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1164,10 +1080,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the index corresponding to the block number of the current chain head.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *QUANTITY* - Hexadecimal integer representing the index corresponding to the block\nnumber of the current chain head.\n"
           },
@@ -1187,10 +1101,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1216,10 +1128,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Invokes a contract function locally and does not change the state of the blockchain.\n\nYou can interact with contracts using `eth_sendRawTransaction` or `eth_call`.\n\n#### Parameters\n\n*OBJECT* - [Transaction call object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-call-object).\n\n*QUANTITY|TAG* - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` - `data` - Return value of the executed contract.\n"
           },
@@ -1239,10 +1149,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1268,10 +1176,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the [chain ID](https://besu.hyperledger.org/en/stable/Concepts/NetworkID-And-ChainID).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *quantity* - Chain ID, in hexadecimal."
           },
@@ -1291,10 +1197,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1320,10 +1224,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the client coinbase address. The coinbase address is the account to pay mining rewards to.\n\nTo set a coinbase address, start Besu with the `--miner-coinbase` option set to a valid Ethereum\naccount address. You can get the Ethereum account address from a client such as MetaMask or\nEtherscan. For example:\n\n**Example**\n\n```bash\nbesu --miner-coinbase=\"0xfe3b557e8fb62b89f4916b721be55ceb828dbd73\" --rpc-http-enabled\n```\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *data* - Coinbase address."
           },
@@ -1343,10 +1245,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1372,10 +1272,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns an estimate of the gas required for a transaction to complete. The estimation process\ndoes not use gas and the transaction is not added to the blockchain. The resulting estimate can be\ngreater than the amount of gas the transaction ends up using, for reasons including EVM mechanics\nand node performance.\n\nThe `eth_estimateGas` call does not send a transaction. You must call\n[`eth_sendRawTransaction`](#eth_sendrawtransaction) to execute the transaction.\n\n#### Parameters\n\nThe transaction call object parameters are the same as those for [`eth_call`](#eth_call) except for the\n[`strict` parameter](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-call-object). If `strict` is set to `true`, the sender\naccount balance is checked for value transfer and transaction fees. The default for `strict` is `false`.\n\nFor `eth_estimateGas`, all fields are optional because setting a gas limit\nis irrelevant to the estimation process (unlike transactions, in which gas limits apply).\n\n`object` - [Transaction call object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-call-object).\n\n#### Returns\n\n`result` : `quantity` -  Amount of gas used."
           },
@@ -1395,10 +1293,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1424,10 +1320,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns a percentile gas unit price for the most recent blocks, in Wei. By default,\nthe last 100 blocks are examined and the 50th percentile gas unit price (that is, the median value)\nis returned.\n\nIf there are no blocks, the value for [`--min-gas-price`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#min-gas-price) is returned.\nThe value returned is restricted to values between [`--min-gas-price`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#min-gas-price)\nand [`--api-gas-price-max`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#api-gas-price-max). By default, 1000 Wei and\n500GWei.\n\nUse the [`--api-gas-price-blocks`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#api-gas-price-blocks), [`--api-gas-price-percentile`](CLI/CLI-Syntax#api-gas-price-percentile)\n, and [`--api-gas-price-max`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#api-gas-price-max) command line\noptions to configure the `eth_gasPrice` default values.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : `quantity` - Percentile gas unit price for the most recent blocks, in Wei, as a hexadecimal value."
           },
@@ -1447,10 +1341,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1476,10 +1368,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the account balance of the specified address.\n\n#### Parameters\n\n`DATA` - 20-byte account address from which to retrieve the balance.\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *QUANTITY* - Current balance, in wei, as a hexadecimal value."
           },
@@ -1499,10 +1389,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1528,10 +1416,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns information about the block by hash.\n\n#### Parameters\n\n`DATA` - 32-byte hash of a block.\n\n`Boolean` - If `true`, returns the full [transaction objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-object);\nif `false`, returns the transaction hashes.\n\n#### Returns\n\n`result` : *OBJECT* - [Block object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#block-object) , or `null` when there is no block."
           },
@@ -1551,10 +1437,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1580,10 +1464,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns information about a block by block number.\n\n#### Parameters\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`Boolean` - If `true`, returns the full [transaction objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-object);\nif `false`, returns only the hashes of the transactions.\n\n#### Returns\n\n`result` : *OBJECT* - [Block object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#block-object) , or `null` when there is no\nblock."
           },
@@ -1603,10 +1485,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1632,10 +1512,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of transactions in the block matching the given block hash.\n\n#### Parameters\n\n`data` - 32-byte block hash.\n\n#### Returns\n\n`result` : `quantity` - Integer representing the number of transactions in the specified block."
           },
@@ -1655,10 +1533,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1684,10 +1560,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of transactions in a block matching the specified block number.\n\n#### Parameters\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *QUANTITY* - Integer representing the number of transactions in the specified block."
           },
@@ -1707,10 +1581,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1736,10 +1608,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the code of the smart contract at the specified address. Besu stores compiled smart\ncontract code as a hexadecimal value.\n\n#### Parameters\n\n`DATA` - 20-byte contract address.\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *DATA* - Code stored at the specified address."
           },
@@ -1759,10 +1629,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1788,10 +1656,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Polls the specified filter and returns an array of changes that have occurred since the last poll.\n\n#### Parameters\n\n`data` - Filter ID.\n\n#### Returns\n\n`result` : `Array of Object` - If nothing changed since the last poll, an empty list. Otherwise:\n\n* For filters created with `eth_newBlockFilter`, returns block hashes.\n* For filters created with `eth_newPendingTransactionFilter`, returns transaction hashes.\n* For filters created with `eth_newFilter`, returns [log objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#log-object)."
           },
@@ -1811,10 +1677,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1838,10 +1702,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1865,10 +1727,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1894,10 +1754,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns an array of [logs](https://besu.hyperledger.org/en/stable/Concepts/Events-and-Logs) for the specified filter.\n\nLeave the [`--auto-log-bloom-caching-enabled`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#auto-log-bloom-caching-enabled)\ncommand line option at the default value of `true` to improve log retrieval performance.\n\n> **note**\n\n    `eth_getFilterLogs` is only used for filters created with `eth_newFilter`. To specify a filter\n    object and get logs without creating a filter, use `eth_getLogs` .\n\n#### Parameters\n\n`data` - Filter ID.\n\n#### Returns\n\n`array` - [Log objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#log-object)."
           },
@@ -1917,10 +1775,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1946,10 +1802,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns an array of [logs](https://besu.hyperledger.org/en/stable/Concepts/Events-and-Logs) matching a specified filter object.\n\nLeave the [`--auto-log-bloom-caching-enabled`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#auto-log-bloom-caching-enabled)\ncommand line option at the default value of `true` to improve log retrieval performance.\n\n> **Attention**\n>\n> Using `eth_getLogs` to get the logs from a large range of blocks, especially an entire chain from its genesis block, can cause Besu to hang and never return a response. We recommend splitting one large query into multiple ones for better performance.\n\n#### Parameters\n\n`Object` - [Filter options object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#filter-options-object).\n\n#### Returns\n\n`array` - [Log objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#log-object)."
           },
@@ -1969,10 +1823,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -1998,10 +1850,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns miner data for the specified block.\n\n#### Parameters\n\n`data` - 32 byte block hash.\n\n#### Returns\n\n`result`: `object` - [Miner data](https://besu.hyperledger.org/en/stable/Reference/API-Objects#miner-data-object)."
           },
@@ -2021,10 +1871,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2050,10 +1898,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns miner data for the specified block.\n\n#### Parameters\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result`: `object` - [Miner data](https://besu.hyperledger.org/en/stable/Reference/API-Objects#miner-data-object)."
           },
@@ -2073,10 +1919,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2102,10 +1946,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the account and storage values of the specified account, including the Merkle proof.\n\nThe API allows IoT devices or mobile apps which are unable to run light clients to verify responses\nfrom untrusted sources, by using a trusted block hash.\n\n#### Parameters\n\n`DATA` - 20-byte address of the account or contract.\n\n`ARRAY` - Array of 32-byte storage keys to generate proofs for.\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result`: *Object* - Account details:\n\n* `balance`:`Quantity` - Account balance.\n* `codeHash`:`Data, 32-byte` - Hash of the account code.\n* `nonce`:`Quantity` - Number of transactions sent from the account.\n* `storageHash`:`Data, 32-byte` - SHA3 of the `storageRoot`.\n* `accountProof`:`Array` - RLP-encoded Merkle tree nodes, starting with the `stateRoot`.\n* `storageProof`:`Array`- Storage entries. Each entry is an object that displays:\n    * `key`:`Quantity` - Storage key.\n    * `value`:`Quantity` - Storage value.\n    * `proof`:`Array` - RLP-encoded Merkle tree nodes, starting with the `storageHash`."
           },
@@ -2125,10 +1967,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2154,10 +1994,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the value of a storage position at a specified address.\n\n#### Parameters\n\n`DATA` - A 20-byte storage address.\n\n`QUANTITY` - Integer index of the storage position.\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *DATA* - The value at the specified storage position."
           },
@@ -2177,10 +2015,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2206,10 +2042,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns transaction information for the specified block hash and transaction index position.\n\n#### Parameters\n\n`DATA` - 32-byte hash of a block.\n\n`QUANTITY` - Integer representing the transaction index position.\n\n#### Returns\n\nObject - [Transaction object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-object), or `null` when there is no\ntransaction."
           },
@@ -2229,10 +2063,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2258,10 +2090,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns transaction information for the specified block number and transaction index position.\n\n#### Parameters\n\n`QUANTITY|TAG` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`QUANTITY` - The transaction index position.\n\n#### Returns\n\nObject - [Transaction object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-object), or `null` when there is no\ntransaction."
           },
@@ -2281,10 +2111,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2310,10 +2138,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns transaction information for the specified transaction hash.\n\n#### Parameters\n\n`DATA` - 32-byte transaction hash.\n\n#### Returns\n\nObject - [Transaction object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-object), or `null` when there is no\ntransaction."
           },
@@ -2333,10 +2159,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2362,10 +2186,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of transactions sent from a specified address. Use the `pending` tag to get the\nnext account nonce not used by any pending transactions.\n\n#### Parameters\n\n`data` - 20-byte account address.\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *quantity* - Integer representing the number of transactions sent from the specified\naddress."
           },
@@ -2385,10 +2207,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2414,10 +2234,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the receipt of a transaction by transaction hash. Receipts for pending transactions are not\navailable.\n\nIf you enabled [revert reason](https://besu.hyperledger.org/en/stable/HowTo/Send-Transactions/Revert-Reason), the receipt includes\navailable revert reasons in the response.\n\n#### Parameters\n\n`DATA` - 32-byte hash of a transaction.\n\n#### Returns\n\n`Object` - [Transaction receipt object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-receipt-object), or `null` when\nthere is no receipt."
           },
@@ -2437,10 +2255,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2466,10 +2282,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns uncle specified by block hash and index.\n\n#### Parameters\n\n`data` - 32-byte block hash.\n\n`quantity` - Index of the uncle.\n\n#### Returns\n\n`result` : [Block object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#block-object)\n\n> **note**\n>\n> Uncles do not contain individual transactions."
           },
@@ -2489,10 +2303,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2518,10 +2330,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns uncle specified by block number and index.\n\n#### Parameters\n\n`quantity|tag` - Index of the block, or one of the string tags `latest`, `earliest`, or `pending`,\nas described in [Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`quantity` - Index of the uncle.\n\n#### Returns\n\n`result` : [Block object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#block-object)\n\n> **note**\n>\n> Uncles do not contain individual transactions."
           },
@@ -2541,10 +2351,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2570,10 +2378,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of uncles in a block from a block matching the given block hash.\n\n#### Parameters\n\n`DATA` - 32-byte block hash.\n\n#### Returns\n\n`result` : *QUANTITY* - Integer representing the number of uncles in the specified block."
           },
@@ -2593,10 +2399,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2622,10 +2426,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of uncles in a block matching the specified block number.\n\n#### Parameters\n\n`QUANTITY|TAG` - Integer representing either the index of the block within the blockchain, or one\nof the string tags `latest`, `earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` : *QUANTITY* - Integer representing the number of uncles in the specified block."
           },
@@ -2645,10 +2447,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2674,10 +2474,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the hash of the current block, the seed hash, and the required target boundary condition.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : Array with the following fields:\n\n* `DATA`, 32 Bytes - Hash of the current block header (pow-hash).\n* `DATA`, 32 Bytes - The seed hash used for the DAG.\n* `DATA`, 32 Bytes - The required target boundary condition: 2^256 / difficulty.\n* `QUANTITY` - Hexadecimal integer representing the current block number."
           },
@@ -2697,10 +2495,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2726,10 +2522,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of hashes per second with which the node is mining.\n\nWhen the stratum server is enabled, this method returns the cumulative hashrate of all sealers\nreporting their hashrate.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : `quantity` - Number of hashes per second.\n"
           },
@@ -2749,10 +2543,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2778,10 +2570,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Whether the client is actively mining new blocks. Besu pauses mining while the client synchronizes\nwith the network regardless of command settings or methods called.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` (*BOOLEAN*) - `true` if the client is actively mining new blocks, otherwise `false`."
           },
@@ -2801,10 +2591,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2830,10 +2618,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Creates a filter to retrieve new block hashes. To poll for new blocks, use\n[`eth_getFilterChanges`](#eth_getfilterchanges).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`data` - Filter ID."
           },
@@ -2853,10 +2639,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2882,10 +2666,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Creates a [log filter](https://besu.hyperledger.org/en/stable/Concepts/Events-and-Logs). To poll for logs associated with the\ncreated filter, use [`eth_getFilterChanges`](#eth_getfilterchanges). To get all logs associated with\nthe filter, use [`eth_getFilterLogs`](#eth_getfilterlogs).\n\n#### Parameters\n\n`Object` - [Filter options object](https://besu.hyperledger.org/en/stable/Reference/API-Objects#filter-options-object).\n\n> **note**\n>\n> `fromBlock` and `toBlock` in the filter options object default to `latest`.\n\n#### Returns\n\n`data` - Filter ID."
           },
@@ -2905,10 +2687,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2934,10 +2714,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Creates a filter to retrieve new pending transactions hashes. To poll for new pending transactions,\nuse [`eth_getFilterChanges`](#eth_getfilterchanges).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`data` - Filter ID."
           },
@@ -2957,10 +2735,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -2986,10 +2762,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns current Ethereum protocol version.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *quantity* - Ethereum protocol version."
           },
@@ -3009,10 +2783,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3038,10 +2810,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Sends a [signed transaction](https://besu.hyperledger.org/en/stable/HowTo/Send-Transactions/Transactions).\nA transaction can send ether, deploy a contract, or interact with a contract.\nSet the maximum transaction fee for transactions using the [`--rpc-tx-feecap`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-tx-feecap) CLI option.\n\nYou can interact with contracts using [`eth_sendRawTransaction` or `eth_call`].\n\nTo avoid exposing your private key, create signed transactions offline and send the signed\ntransaction data using `eth_sendRawTransaction`.\n\n> **important**\n>\n> Besu does not implement [`eth_sendTransaction`](https://besu.hyperledger.org/en/stable/HowTo/Send-Transactions/Account-Management).\n>\n> [EthSigner](https://docs.ethsigner.consensys.net/) provides transaction signing and implements\n> [`eth_sendTransaction`](https://docs.ethsigner.consensys.net/Reference/API-Methods#eth_sendtransaction).\n\n#### Parameters\n\n`data` -  Signed transaction serialized to hexadecimal format. For example:\n\n`params: [\"0xf869018203e882520894f17f52151ebef6c7334fad080c5704d77216b732881bc16d674ec80000801ba02da1c48b670996dcb1f447ef9ef00b33033c48a4fe938f420bec3e56bfd24071a062e0aa78a81bf0290afbc3a9d8e9a068e6d74caa66c5e0fa8a46deaae96b0833\"]`\n\n> **note**\n>\n> [Creating and Sending Transactions](https://besu.hyperledger.org/en/stable/HowTo/Send-Transactions/Transactions) includes examples of creating signed transactions using the [web3.js](https://github.com/ethereum/web3.js/) library.\n\n#### Returns\n\n`result` : `data` - 32-byte transaction hash."
           },
@@ -3056,10 +2826,8 @@
                   "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"eth_sendRawTransaction\",\"params\" :[\"0xf85f808203e8832dc6c08080914f785b6f626a656374204f626a6563745d1ba004193142058b4fe6802677a939e76f93e7fa30e91835a911e206f9855330929ca055ce11a262c804a168c8a801e55a68b3d578a4b52b9dfbed98c4aa47f88a0adf\"], \"id\":1}"
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3098,10 +2866,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Submits the mining hashrate.\n\nUsed by mining software such as [Ethminer](https://github.com/ethereum-mining/ethminer).\n\n#### Parameters\n\n* DATA, 32 Bytes - Hexadecimal string representation of the hash rate.\n* DATA, 32 Bytes - Random hexadecimal ID identifying the client.\n\n#### Returns\n\n`result: Boolean`, `true` if submission is successful, otherwise `false`."
           },
@@ -3121,10 +2887,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3150,10 +2914,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Submits a Proof of Work (Ethash) solution.\n\nUsed by mining software such as [Ethminer](https://github.com/ethereum-mining/ethminer).\n\n#### Parameters\n\n* DATA, 8 Bytes - Retrieved nonce.\n* DATA, 32 Bytes - Hash of the block header (PoW-hash).\n* DATA, 32 Bytes - Mix digest.\n\n#### Returns\n\n`result: Boolean`, `true` if the provided solution is valid, otherwise `false`."
           },
@@ -3173,10 +2935,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3202,10 +2962,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns an object with data about the synchronization status, or `false` if not synchronizing.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *Object|Boolean* - Object with synchronization status data or `false` if not\nsynchronizing:\n\n* `startingBlock` : *quantity* - Index of the highest block on the blockchain when the network\n  synchronization starts.\n* `currentBlock` : *quantity* - Index of the latest block (also known as the best block) for the\n  current node. This is the same index that [`eth_blockNumber`](#eth_blocknumber) returns.\n* `highestBlock`: *quantity* - Index of the highest known block in the peer network (that is, the\n  highest block so far discovered among peer nodes). This is the same value as `currentBlock` if\n  the current node has no peers.\n* `pulledStates`: *quantity* - If fast synchronizing, the number of state entries fetched so far,\n  or `null` if this is not known or not relevant. If full synchronizing or fully synchronized, this\n  field is not returned.\n* `knownStates`: *quantity* - If fast synchronizing, the number of states the node knows of so\n  far, or `null` if this is not known or not relevant. If full synchronizing or fully synchronized,\n  this field is not returned."
           },
@@ -3225,10 +2983,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3254,10 +3010,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Uninstalls a filter with the specified ID. When a filter is no longer required, call this method.\n\nFilters time out when not requested by [`eth_getFilterChanges`](#eth_getfilterchanges) or [`eth_getFilterLogs`](#eth_getfilterlogs) for 10\nminutes.\n\n#### Parameters\n\n`data` - Filter ID.\n\n#### Returns\n\n`Boolean` - `true` if the filter was successfully uninstalled, otherwise `false`."
           },
@@ -3277,10 +3031,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3312,10 +3064,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Starts the mining process. To start mining, you must first specify a miner coinbase using the\n[`--miner-coinbase`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#miner-coinbase) command line option.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` :  `boolean` - `true` if mining starts, or if the node was already mining."
           },
@@ -3335,10 +3085,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3364,10 +3112,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Stops the mining process on the client.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` :  `boolean` - `true` if mining stops, or if the node was not mining.\n"
           },
@@ -3387,10 +3133,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3422,10 +3166,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the [network ID](https://besu.hyperledger.org/en/stable/Concepts/NetworkID-And-ChainID).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *string* - Current network ID.\n\n| Network ID | Chain | Network | Description\n|------------|-------|---------|-------------------------------|\n| `1`        | ETH   | Mainnet | Main Ethereum network         |\n| `3`        | ETH   | Ropsten | PoW test network              |\n| `4`        | ETH   | Rinkeby | PoA test network using Clique |\n| `5`        | ETH   | Goerli  | PoA test network using Clique |\n| `2018`     | ETH   | Dev     | PoW development network       |\n| `1`        | ETC   | Classic | Main Ethereum Classic network |\n| `7`        | ETC   | Mordor  | PoW test network              |\n\n> **note**\n>\n> For almost all networks network ID and chain ID are the same.\nThe only networks in the table above with different network and chain IDs are\nClassic with a chain ID of `61` and Mordor with a chain ID of `63`."
           },
@@ -3445,10 +3187,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "_postman_previewlanguage": "json",
@@ -3473,10 +3213,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Whether the client is actively listening for network connections.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` (*BOOLEAN*) - `true` if the client is actively listening for network connections;\notherwise `false`."
           },
@@ -3496,10 +3234,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "_postman_previewlanguage": "json",
@@ -3524,10 +3260,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the number of peers currently connected to the client.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *integer* - Number of connected peers in hexadecimal."
           },
@@ -3548,7 +3282,6 @@
                 },
                 "url": {
                   "raw": "http://127.0.0.1:8545",
-                  "protocol": "http",
                   "host": ["127", "0", "0", "1"],
                   "port": "8545"
                 }
@@ -3575,10 +3308,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the [enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *string* - [Enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url) of the node."
           },
@@ -3598,10 +3329,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "_postman_previewlanguage": "json",
@@ -3626,10 +3355,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns enabled services (for example, `jsonrpc`) and the host and port for each service.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *objects* - Enabled services."
           },
@@ -3649,10 +3376,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "_postman_previewlanguage": "json",
@@ -3682,10 +3407,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Provides transaction processing tracing per block.\n\n> **important**\n\n    Your node must be an archive node (that is, synchronized without pruning or fast sync) or the\n    requested block must be within [the number of pruning blocks retained](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#pruning-blocks-retained)\n    (by default, 1024).\n\n#### Parameters\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n`array of strings` - Tracing options are\n[`trace`, `vmTrace`, and `stateDiff`](Trace-Types). Specify any\ncombination of the three options including none of them.\n\n#### Returns\n\n`result` - Array of [transaction trace objects](https://besu.hyperledger.org/en/stable/Reference/API-Objects#transaction-trace-object) containing\none object per transaction, in transaction execution order."
           },
@@ -3722,10 +3445,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Provides transaction processing of [type `trace`](Trace-Types#trace) for the specified block.\n\n> **Important**\n>\n> Your node must be an archive node (that is, synchronized without pruning or fast sync) or the\n> requested block must be within [the number of pruning blocks retained](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#pruning-blocks-retained) (by default, 1024).\n\n#### Parameters\n\n`quantity|tag` - Integer representing a block number or one of the string tags `latest`,\n`earliest`, or `pending`, as described in\n[Block Parameter](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API#block-parameter).\n\n#### Returns\n\n`result` - Array of [calls to other contracts](Trace-Types#trace) containing\none object per call, in transaction execution order."
           },
@@ -3736,10 +3457,8 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "_postman_previewlanguage": "Text",
@@ -3764,10 +3483,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Provides transaction processing of [type `trace`](Trace-Types#trace) for the specified transaction.\n\n> **Important**\n>\n> Your node must be an archive node (that is, synchronized without pruning or fast sync) or the\n> requested transaction must be contained in a block within [the number of pruning blocks retained](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#pruning-blocks-retained) (by default, 1024).\n\n#### Parameters\n\n`data` : Transaction hash\n\n#### Returns\n\n`result` - Array of [calls to other contracts](Trace-Types#trace) containing\none object per call, in the order called by the transaction.\n"
           },
@@ -3778,10 +3495,8 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3813,10 +3528,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Lists pending transactions that match the supplied filter conditions.\n\n#### Parameters\n\n* `QUANTITY` - Integer representing the maximum number of results to return.\n* Object of fields used to create the filter condition.\n\nEach field in the object corresponds to a field name containing an operator, and a value for the\noperator. A field name can only be specified once, and can only contain one operator.\nFor example, you cannot query transactions with a gas price between 8 and 9 Gwei by using both the\n`gt` and `lt` operator in the same field name instance.\n\nAll filters must be satisfied for a transaction to be returned.\n\n| Field name   | Value                                     | Value type            | Supported operators |\n|--------------|-------------------------------------------|:---------------------:|---------------------|\n| **from**     | Address of the sender.                    | *Data*, 20&nbsp;bytes | `eq`                |\n| **to**       | Address of the receiver, or `\"contract_creation\"`.| *Data*, 20&nbsp;bytes |`eq`, `action`|\n| **gas**      | Gas provided by the sender.               | *Quantity*            | `eq`, `gt`, `lt`    |\n| **gasPrice** | Gas price, in wei, provided by the sender.| *Quantity*            | `eq`, `gt`, `lt`    |\n| **value**    | Value transferred, in wei.                | *Quantity*            | `eq`, `gt`, `lt`    |\n| **nonce**    | Number of transactions made by the sender.| *Quantity*            | `eq`, `gt`, `lt`    |\n|\n\nSupported operators:\n\n* `eq` (Equal to)\n* `lt` (Less than)\n* `gt` (Greater than)\n* `action`\n\n> **Note**\n>\n> The only supported `action` is `\"contract_creation\"`.\n\n#### Returns\n\n`result` - Array of objects with [details of the pending transaction](https://besu.hyperledger.org/en/stable/Reference/API-Objects#pending-transaction-object)."
           },
@@ -3836,10 +3549,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3865,10 +3576,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Lists statistics about the node transaction pool.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` - Transaction pool statistics:\n\n* `maxSize` - Maximum number of transactions kept in the transaction pool. Use the\n  [`--tx-pool-max-size`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#tx-pool-max-size) option to configure the maximum size.\n* `localCount` - Number of transactions submitted directly to this node.\n* `remoteCount` - Number of transactions received from remote nodes."
           },
@@ -3888,10 +3597,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3917,10 +3624,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Lists transactions in the node transaction pool.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` - List of transactions."
           },
@@ -3940,10 +3645,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -3975,10 +3678,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns the current client version.\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : *string* - Current client version."
           },
@@ -3998,10 +3699,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
@@ -4027,10 +3726,8 @@
               }
             },
             "url": {
-              "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-              "protocol": "http",
-              "host": ["{{rpc-http-host}}"],
-              "port": "{{rpc-http-port}}"
+              "raw": "{{rpc-url}}",
+              "host": ["{{rpc-url}}"]
             },
             "description": "Returns a [SHA3](https://en.wikipedia.org/wiki/SHA-3) hash of the specified data. The result value\nis a [Keccak-256](https://keccak.team/keccak.html) hash, not the standardized SHA3-256.\n\n#### Parameters\n\n`DATA` - Data to convert to a SHA3 hash.\n\n#### Returns\n\n`result` (*DATA*) - SHA3 result of the input data."
           },
@@ -4050,10 +3747,8 @@
                   }
                 },
                 "url": {
-                  "raw": "http://{{rpc-http-host}}:{{rpc-http-port}}",
-                  "protocol": "http",
-                  "host": ["{{rpc-http-host}}"],
-                  "port": "{{rpc-http-port}}"
+                  "raw": "{{rpc-url}}",
+                  "host": ["{{rpc-url}}"]
                 }
               },
               "code": 200,
