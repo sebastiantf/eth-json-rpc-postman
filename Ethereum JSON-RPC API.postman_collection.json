@@ -1,8 +1,8 @@
 {
   "info": {
     "_postman_id": "9352fe40-9dc6-4a57-939c-d83379b80537",
-    "name": "Hyperledger Besu JSON-RPC API",
-    "description": "Hyperledger Besu JSON-RPC API enables interaction with a Besu Ethereum node.\n\nRefer to [Besu documentation how to page](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/Using-JSON-RPC-API/) to learn how to use this API.\n",
+    "name": "Ethereum JSON-RPC API",
+    "description": "Ethereum JSON-RPC API enables interaction with an Ethereum node. Includes some standard & non-standard methods",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "25479153"
   },
