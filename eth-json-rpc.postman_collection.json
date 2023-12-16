@@ -8,7 +8,7 @@
   },
   "item": [
     {
-      "name": "ADMIN",
+      "name": "admin",
       "item": [
         {
           "name": "admin_addPeer",
@@ -407,7 +407,7 @@
       ]
     },
     {
-      "name": "CLIQUE",
+      "name": "clique",
       "item": [
         {
           "name": "clique_discard",
@@ -725,7 +725,7 @@
       "description": "> Note\n>\n> The `CLIQUE` API methods are not enabled by default for JSON-RPC.\n>\n> To enable the `CLIQUE` API methods use the [`--rpc-http-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-http-api) or [`--rpc-ws-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-ws-api) options."
     },
     {
-      "name": "DEBUG",
+      "name": "debug",
       "item": [
         {
           "name": "debug_accountRange",
@@ -1095,7 +1095,7 @@
       "description": "> **Note**\n>\n> The `DEBUG` API methods are not enabled by default for JSON-RPC. To enable the `DEBUG` API methods, use the [`--rpc-http-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-http-api) or [`--rpc-ws-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-ws-api) options.\n\nThe DEBUG API is a more verbose alternative to the TRACE API whose main purpose is compatibility with tools such as [Remix](https://remix.ethereum.org/). We recommend using the TRACE API for production use over the DEBUG API."
     },
     {
-      "name": "ETH",
+      "name": "eth",
       "item": [
         {
           "name": "eth_accounts",
@@ -3295,7 +3295,7 @@
       "description": "> **Note**\n>\n> Methods with an equivalent [GraphQL](https://besu.hyperledger.org/en/stable/HowTo/Interact/APIs/GraphQL) query include a GraphQL\n    request and result in the method example. The parameter and result descriptions apply to the\n    JSON-RPC requests. The GraphQL specification is defined in the [schema](https://github.com/hyperledger/besu/blob/master/ethereum/api/src/main/resources/schema.graphqls)."
     },
     {
-      "name": "MINER",
+      "name": "miner",
       "item": [
         {
           "name": "miner_start",
@@ -3405,7 +3405,7 @@
       "description": "> **Note**\n>\n> The `MINER` API methods are not enabled by default for JSON-RPC. To enable the `MINER` API methods, use the [`--rpc-http-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-http-api) or [`--rpc-ws-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-ws-api) options."
     },
     {
-      "name": "NET",
+      "name": "net",
       "item": [
         {
           "name": "net_version",
@@ -3665,7 +3665,7 @@
       ]
     },
     {
-      "name": "TRACE",
+      "name": "trace",
       "item": [
         {
           "name": "trace_replayBlockTransactions",
@@ -3796,7 +3796,7 @@
       "description": "> **Note**\n>\n> The `TRACE` API methods are not enabled by default for JSON-RPC. To enable the `TRACE` API methods, use the [`--rpc-http-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-http-api) or [`--rpc-ws-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-ws-api) options.\n\nThe TRACE API is a more concise alternative to the DEBUG API."
     },
     {
-      "name": "TXPOOL",
+      "name": "txpool",
       "item": [
         {
           "name": "txpool_besuPendingTransactions",
@@ -3958,7 +3958,7 @@
       "description": "> **Note**\n>\n> The `TXPOOL` API methods are not enabled by default for JSON-RPC. To enable the `TXPOOL` API methods, use the [`--rpc-http-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-http-api) or [`--rpc-ws-api`](https://besu.hyperledger.org/en/stable/CLI/CLI-Syntax#rpc-ws-api) options."
     },
     {
-      "name": "WEB3",
+      "name": "web3",
       "item": [
         {
           "name": "web3_clientVersion",
