@@ -11,6 +11,7 @@ Download the collection file from above and import it into Postman
 ## Thanks & References
 
 - [Hyperledger Besu Postman Collection](https://besu.hyperledger.org/global/postman)
+- [SherpaX Postman Collection](https://github.com/chainx-org/SherpaX/blob/singleton/develop_docs/Ethereum-JSON-RPC.postman_collection.json)
 - [Ethereum Execution API Spec](https://github.com/ethereum/execution-apis)
 - [Ethereum JSON-RPC](https://github.com/Destiner/ethereum-json-rpc)
 - [Geth Website](https://geth.ethereum.org/docs)
