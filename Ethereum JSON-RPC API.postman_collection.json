@@ -50,7 +50,7 @@
               "raw": "{{rpc-url}}",
               "host": ["{{rpc-url}}"]
             },
-            "description": "Adds a static node\n\n> **Caution**\n>\n> If connections are timing out, ensure the node ID in the enode URL is correct.\n\n#### Parameters\n\n`string` : Enode URL of peer to add\n\n#### Returns\n\n`result` : `boolean` - `true` if peer added or `false` if peer already a static node."
+            "description": "Adds a static node\n\n> **Caution** \n  \n\n#### Parameters\n\n`string` : Enode URL of peer to add\n\n#### Returns\n\n`result` : `boolean` - `true` if peer added or `false` if peer already a static node."
           },
           "response": [
             {
@@ -98,7 +98,7 @@
               "raw": "{{rpc-url}}",
               "host": ["{{rpc-url}}"]
             },
-            "description": "Returns networking information about the node. The information includes general information about\nthe node and specific information from each running Ethereum sub-protocol (for example, `eth`).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : Node object\n\nProperties of the node object are:\n\n* `enode` - [Enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url) of the node.\n* `listenAddr` - Host and port for the node.\n* `name` - Client name.\n* `id` - [Node public key](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#node-public-key).\n* `ports` - Peer discovery and listening\n  [ports](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Managing-Peers#port-configuration).\n* `protocols` - List of objects containing information for each Ethereum sub-protocol.\n\n> **note**\n>\n> If the node is running locally, the host of the `enode` and `listenAddr` display as `[::]` in the result. When advertising externally, the external address displayed for the `enode` and `listenAddr` is defined by [`--nat-method`](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Specifying-NAT).\n"
+            "description": "Returns networking information about the node. The information includes general information about  \nthe node and specific information from each running Ethereum sub-protocol (for example, `eth`).\n\n#### Parameters\n\nNone\n\n#### Returns\n\n`result` : Node object\n\nProperties of the node object are:\n\n- `enode` - [Enode URL](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#enode-url) of the node.\n- `listenAddr` - Host and port for the node.\n- `name` - Client name.\n- `id` - [Node public key](https://besu.hyperledger.org/en/stable/Concepts/Node-Keys#node-public-key).\n- `ports` - Peer discovery and listening  \n    [ports](https://besu.hyperledger.org/en/stable/HowTo/Find-and-Connect/Managing-Peers#port-configuration).\n- `protocols` - List of objects containing information for each Ethereum sub-protocol.\n    \n\n> **note**"
           },
           "response": [
             {
@@ -889,7 +889,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_call\",\n    \"params\": [\n        {\n            \"to\": \"0x69498dd54bd25aa0c886cf1f8b8ae0856d55ff13\",\n            \"value\": \"0x1\"\n        },\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_call\",\n    \"params\": [\n        {\n            \"from\": \"\",\n            \"to\": \"\",\n            \"gas\": \"\",\n            \"gasPrice\": \"\",\n            \"value\": \"\",\n            \"data\": \"\"\n        },\n        \"latest\"\n    ],\n    \"id\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -1033,7 +1033,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_estimateGas\",\n    \"params\": [\n        {\n            \"from\": \"0x687422eea2cb73b5d3e242ba5456b782919afc85\",\n            \"to\": \"0xdd37f65db31c107f773e82a4f85c693058fef7a9\",\n            \"value\": \"0x1\"\n        },\n        \"latest\"\n    ],\n    \"id\": 1\n}",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_estimateGas\",\n    \"params\": [\n        {\n            \"from\": \"\",\n            \"to\": \"\",\n            \"gas\": \"\",\n            \"gasPrice\": \"\",\n            \"value\": \"\",\n            \"data\": \"\"\n        },\n        \"latest\"\n    ],\n    \"id\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
